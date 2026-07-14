@@ -1,0 +1,44 @@
+### Maven Build Outputs ###
+target/
+*.jar
+*.war
+*.ear
+*.class
+dependency-reduced-pom.xml
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+### Eclipse ###
+.buildpath
+.project
+.settings/
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+
+### Visual Studio Code ###
+.vscode/
+
+### Log Files & Temp Files ###
+*.log
+logs/
+*.tmp
+*.swp
+
+### OS Specific Files ###
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+### Secrets & Environment Configs ###
+.env
+.env.local
+
+### Project implementation phase ###
+sprints/
