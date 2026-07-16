@@ -6,7 +6,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(Not Started)*
+- **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
+- **Current Sprint:** S1 — Project Foundation
+- **Current Task:** T1 — Initialize Maven Multi-Module Project
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -15,32 +17,43 @@
 
 **Goal:** Project skeleton, user registration, JWT auth, and address management.
 
+**Sprints:** S1 → S2 → S3 → S4 → S5 (see `sprints/PH1_Foundation_User_Auth/SPRINT_MAP.md` for full breakdown)
+
+| Sprint | Name | Status |
+|---|---|---|
+| S1 | Project Foundation | 🟢 In Progress |
+| S2 | Common Module | ⬜ Not Started |
+| S3 | User Registration & Auth | ⬜ Not Started |
+| S4 | User Profile & Addresses | ⬜ Not Started |
+| S5 | Testing & Verification | ⬜ Not Started |
+
 ### Completed
 *(none yet)*
 
 ### In Progress
-*(none yet)*
+- **[S1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules)
+- **[S1]** Set up Docker Compose with PostgreSQL
+- **[S1]** Configure Spring Boot 4, Spring Security, Spring Modulith
 
 ### Next Up
-1. Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules)
-2. Set up Docker Compose with PostgreSQL
-3. Configure Spring Boot 4, Spring Security, Spring Modulith
-4. Implement `common` module:
+- **[S2]** Implement `common` module:
    - `BaseEntity` and `SoftDeletableEntity`
    - Global exception handler (RFC 7807)
    - Shared pagination DTOs
    - JPA auditing configuration
-5. Implement `user` module:
+- **[S3]** Implement `user` module:
    - User registration (default CUSTOMER role)
    - Login (JWT access + refresh tokens)
    - Token refresh and logout
+   - Flyway migrations for `user_schema`
+- **[S4]** Implement `user` module (continued):
    - User profile CRUD
    - "Become seller" endpoint
    - Address CRUD
-   - Flyway migrations for `user_schema`
-6. Set up Swagger/OpenAPI
-7. Write unit tests + integration tests with Testcontainers
-8. Add Spring Modulith architecture verification test
+   - Set up Swagger/OpenAPI
+- **[S5]** Testing:
+   - Write unit tests + integration tests with Testcontainers
+   - Add Spring Modulith architecture verification test
 
 **Deliverable:** A running app where users can register, login, manage their profile and addresses.
 
@@ -49,6 +62,8 @@
 ## Phase 2: Product & Catalog 📦 *(Not Started)*
 
 **Goal:** Sellers can create shops and list products. Customers can browse.
+
+**Sprints:** To be planned when Phase 1 completes.
 
 ### Completed
 *(none yet)*
@@ -77,6 +92,8 @@
 
 **Goal:** End-to-end purchase flow from cart to order completion.
 
+**Sprints:** To be planned when Phase 2 completes.
+
 ### Completed
 *(none yet)*
 
@@ -104,6 +121,8 @@
 ## Phase 4: Reviews, Wishlist & Polish ⭐ *(Not Started)*
 
 **Goal:** Social features and final polish.
+
+**Sprints:** To be planned when Phase 3 completes.
 
 ### Completed
 *(none yet)*
@@ -151,6 +170,7 @@
 | 8 | PostgreSQL full-text search instead of Elasticsearch | No extra infrastructure; powerful enough for an e-commerce catalog; uses tsvector/tsquery with GIN indexes | 2026-07-13 |
 | 9 | No product variants (single SKU per product) | Keeps the product domain simpler for a pet project; can be added later if needed | 2026-07-13 |
 | 10 | Self-service seller registration (no admin approval) | Keeps the scope manageable for a pet project; any user can become a seller | 2026-07-13 |
+| 11 | Rolling Wave Planning with sprint-based task management | Only the current sprint has detailed tasks; future sprints are outlined but detailed when reached | 2026-07-15 |
 
 ---
 
@@ -158,4 +178,6 @@
 
 *(Context needed to resume work in the next session)*
 
-**Last session (2026-07-13):** Completed system design brainstorming and created comprehensive system design document. Decomposed the design into modular knowledge base context files. No code has been written yet. Ready to begin Phase 1.
+**Session 1 (2026-07-13):** Completed system design brainstorming and created comprehensive system design document. Decomposed the design into modular knowledge base context files. No code has been written yet.
+
+**Session 2 (2026-07-15):** Assembled the virtual AI team (5 agents: Architecture Guardian, Code Quality Reviewer, Security Analyst, DBA Reviewer, QA Testing Coach). Created sprint map for Phase 1 (5 sprints, ~22 tasks). Generated detailed task files for Sprint 1 (4 tasks). Ready to begin coding T1: Initialize Maven Multi-Module Project.
