@@ -33,7 +33,7 @@
 ### In Progress
 - **[S1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules)
 - **[S1]** Set up Docker Compose with PostgreSQL
-- **[S1]** Configure Spring Boot 4, Spring Security, Spring Modulith
+- **[S1]** Configure Spring Boot 3.5, Spring Security, Spring Modulith
 
 ### Next Up
 - **[S2]** Implement `common` module:
@@ -171,6 +171,7 @@
 | 9 | No product variants (single SKU per product) | Keeps the product domain simpler for a pet project; can be added later if needed | 2026-07-13 |
 | 10 | Self-service seller registration (no admin approval) | Keeps the scope manageable for a pet project; any user can become a seller | 2026-07-13 |
 | 11 | Rolling Wave Planning with sprint-based task management | Only the current sprint has detailed tasks; future sprints are outlined but detailed when reached | 2026-07-15 |
+| 12 | Spring Boot 3.5.x instead of 4.x | Some Spring ecosystem dependencies (Spring Modulith, springdoc-openapi, etc.) not yet fully compatible with Spring Boot 4; revisit when ecosystem catches up | 2026-07-25 |
 
 ---
 
@@ -181,3 +182,5 @@
 **Session 1 (2026-07-13):** Completed system design brainstorming and created comprehensive system design document. Decomposed the design into modular knowledge base context files. No code has been written yet.
 
 **Session 2 (2026-07-15):** Assembled the virtual AI team (5 agents: Architecture Guardian, Code Quality Reviewer, Security Analyst, DBA Reviewer, QA Testing Coach). Created sprint map for Phase 1 (5 sprints, ~22 tasks). Generated detailed task files for Sprint 1 (4 tasks). Ready to begin coding T1: Initialize Maven Multi-Module Project.
+
+**Session 3 (2026-07-25):** Completed T1: Initialize Maven Multi-Module Project. Code review by Architecture Guardian and Code Quality Reviewer identified: (1) main class was in wrong package (`dev.ozodn.onlineshop.app` → moved to `dev.ozodn.onlineshop`), (2) groupId inconsistency across modules (unified to `dev.ozodn.onlineshop` for all modules), (3) missing dependency management entries (added Lombok, Testcontainers BOM, PostgreSQL driver, Flyway), (4) decided on Spring Boot 3.5.x over 4.x due to ecosystem compatibility, (5) Lombok 1.18.36→1.18.38 to fix `ExceptionInInitializerError: TypeTag :: UNKNOWN` incompatibility with JDK 21. All issues resolved. `mvn clean compile` passes. Ready for T2: Docker Compose + PostgreSQL.

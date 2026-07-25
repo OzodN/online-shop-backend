@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: online-shop
+  profiles:
+    active: dev
