@@ -1,5 +1,5 @@
 # Task: Initialize Maven Multi-Module Project
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -19,11 +19,11 @@ Each module must use the base package `dev.ozodn.onlineshop`.
 - `context/code-standards.md` — Internal module layered structure (package layout)
 
 ## ✅ Acceptance Criteria
-- [ ] Parent POM exists at `online-shop/pom.xml` with `<modules>` listing `common`, `user`, `app`
-- [ ] Parent POM uses Spring Boot 4 as `<parent>` with Java 21 `<maven.compiler.source/target>`
-- [ ] `<dependencyManagement>` declares versions for: Spring Modulith BOM, MapStruct, Lombok, springdoc-openapi, Testcontainers BOM, PostgreSQL driver, Flyway
-- [ ] `common/pom.xml` exists as a JAR module with `<parent>` pointing to the parent POM
-- [ ] `user/pom.xml` exists as a JAR module with dependency on `common`
-- [ ] `app/pom.xml` exists with dependencies on `common` and `user`, has `spring-boot-maven-plugin`
-- [ ] `app/src/main/java/dev/ozodn/onlineshop/OnlineShopApplication.java` exists with `@SpringBootApplication`
-- [ ] `mvn clean compile` runs successfully from the project root with no errors
+- [x] Parent POM exists at `online-shop/pom.xml` with `<modules>` listing `common`, `user`, `app`
+- [x] Parent POM uses Spring Boot 4 as `<parent>` with Java 21 `<maven.compiler.source/target>`
+- [x] `<dependencyManagement>` declares versions for: Spring Modulith BOM, MapStruct, Lombok, springdoc-openapi, Testcontainers BOM, PostgreSQL driver, Flyway
+- [x] `common/pom.xml` exists as a JAR module with `<parent>` pointing to the parent POM
+- [x] `user/pom.xml` exists as a JAR module with dependency on `common`
+- [x] `app/pom.xml` exists with dependencies on `common` and `user`, has `spring-boot-maven-plugin`
+- [x] `app/src/main/java/dev/ozodn/onlineshop/OnlineShopApplication.java` exists with `@SpringBootApplication`
+- [x] `mvn clean compile` runs successfully from the project root with no errors
