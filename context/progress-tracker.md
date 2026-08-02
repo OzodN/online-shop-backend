@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S1 — Project Foundation
-- **Current Task:** T1 — Initialize Maven Multi-Module Project
+- **Current Task:** T3 — Configure Spring Boot, Spring Security, Spring Modulith
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -28,14 +28,15 @@
 | S5 | Testing & Verification | ⬜ Not Started |
 
 ### Completed
-*(none yet)*
+- **[S1/T1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules) ✅
+- **[S1/T2]** Set up Docker Compose with PostgreSQL ✅
 
 ### In Progress
-- **[S1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules)
-- **[S1]** Set up Docker Compose with PostgreSQL
-- **[S1]** Configure Spring Boot 3.5, Spring Security, Spring Modulith
+*(none yet)*
 
 ### Next Up
+- **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith
+- **[S1/T4]** Gitignore and full verification
 - **[S2]** Implement `common` module:
    - `BaseEntity` and `SoftDeletableEntity`
    - Global exception handler (RFC 7807)
@@ -172,6 +173,7 @@
 | 10 | Self-service seller registration (no admin approval) | Keeps the scope manageable for a pet project; any user can become a seller | 2026-07-13 |
 | 11 | Rolling Wave Planning with sprint-based task management | Only the current sprint has detailed tasks; future sprints are outlined but detailed when reached | 2026-07-15 |
 | 12 | Spring Boot 3.5.x instead of 4.x | Some Spring ecosystem dependencies (Spring Modulith, springdoc-openapi, etc.) not yet fully compatible with Spring Boot 4; revisit when ecosystem catches up | 2026-07-25 |
+| 13 | Use `.yaml` extension instead of `.yml` for all YAML files | `.yaml` is the official extension per the YAML specification; consistency across `docker-compose.yaml`, `application.yaml`, and all future config files | 2026-08-02 |
 
 ---
 
@@ -184,3 +186,5 @@
 **Session 2 (2026-07-15):** Assembled the virtual AI team (5 agents: Architecture Guardian, Code Quality Reviewer, Security Analyst, DBA Reviewer, QA Testing Coach). Created sprint map for Phase 1 (5 sprints, ~22 tasks). Generated detailed task files for Sprint 1 (4 tasks). Ready to begin coding T1: Initialize Maven Multi-Module Project.
 
 **Session 3 (2026-07-25):** Completed T1: Initialize Maven Multi-Module Project. Code review by Architecture Guardian and Code Quality Reviewer identified: (1) main class was in wrong package (`dev.ozodn.onlineshop.app` → moved to `dev.ozodn.onlineshop`), (2) groupId inconsistency across modules (unified to `dev.ozodn.onlineshop` for all modules), (3) missing dependency management entries (added Lombok, Testcontainers BOM, PostgreSQL driver, Flyway), (4) decided on Spring Boot 3.5.x over 4.x due to ecosystem compatibility, (5) Lombok 1.18.36→1.18.38 to fix `ExceptionInInitializerError: TypeTag :: UNKNOWN` incompatibility with JDK 21. All issues resolved. `mvn clean compile` passes. Ready for T2: Docker Compose + PostgreSQL.
+
+**Session 4 (2026-08-02):** Completed T2: Set Up Docker Compose with PostgreSQL. Developer created `docker-compose.yaml`, `init.sql` (4 schemas), and `application.yaml`. Architecture Guardian review requested 3 changes: (1) `.yml` → `.yaml` naming — developer chose `.yaml` as project standard (recorded as AD #13), (2) missing JPA dialect — added `org.hibernate.dialect.PostgreSQLDialect`, (3) `public` in Flyway schemas list — removed. All review changes applied. Docker verified: PostgreSQL 16 starts, 4 schemas created, Spring Boot connects successfully. All 7/7 acceptance criteria met. Ready for T3.

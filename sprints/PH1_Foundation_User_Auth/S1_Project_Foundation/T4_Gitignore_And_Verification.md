@@ -9,8 +9,8 @@ You must:
 
 **`.gitignore`:**
 - Create a `.gitignore` in the project root tailored for a Java/Maven/IntelliJ project.
-- Ignore: `target/`, `.idea/`, `*.iml`, `*.class`, `.DS_Store`, `*.log`, `application-local.yml`, uploaded files directory.
-- Do NOT ignore `docker-compose.yml`, `context/`, `sprints/`, or `AGENTS.md`.
+- Ignore: `target/`, `.idea/`, `*.iml`, `*.class`, `.DS_Store`, `*.log`, `application-local.yaml`, uploaded files directory.
+- Do NOT ignore `docker-compose.yaml`, `context/`, `sprints/`, or `AGENTS.md`.
 
 **Full verification:**
 - Start PostgreSQL via `docker compose up -d`

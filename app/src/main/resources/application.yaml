@@ -1,5 +1,38 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: online-shop
+
   profiles:
     active: dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/onlineshop
+    username: onlineshop
+    password: onlineshop
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    schemas:
+      - user_schema
+      - product_schema
+      - order_schema
+      - review_schema
+    baseline-on-migrate: true
+
+logging:
+  level:
+    root: info
+    dev.ozodn.onlineshop: debug

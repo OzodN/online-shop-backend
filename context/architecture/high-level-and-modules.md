@@ -82,7 +82,7 @@ graph LR
 ```
 online-shop/                          # Parent POM
 ├── pom.xml                           # Parent POM (dependency management, plugins)
-├── docker-compose.yml                # PostgreSQL
+├── docker-compose.yaml               # PostgreSQL
 ├── common/                           # Shared module
 │   ├── pom.xml
 │   └── src/
@@ -104,8 +104,8 @@ online-shop/                          # Parent POM
         └── main/
             ├── java/.../OnlineShopApplication.java
             └── resources/
-                └── application.yml
+                └── application.yaml
 ```
 
 > [!IMPORTANT]
-> The `app` module is the runnable Spring Boot application. It has dependencies on all business modules and contains the `main()` class, `application.yml`, and global configuration.
+> The `app` module is the runnable Spring Boot application. It has dependencies on all business modules and contains the `main()` class, `application.yaml`, and global configuration.
