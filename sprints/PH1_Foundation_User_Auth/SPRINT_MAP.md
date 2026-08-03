@@ -1,6 +1,6 @@
 # 📋 Sprint Map — Phase 1: Foundation + User & Auth 🔐
 
-> **Planning approach:** Rolling Wave Planning — only Sprint 1 (S1) has detailed task files. Future sprints are outlined but will be detailed when we reach them.
+> **Planning approach:** Rolling Wave Planning — S1 (complete) and S2 (current) have detailed task files. Future sprints are outlined but will be detailed when we reach them.
 
 ---
 
