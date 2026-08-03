@@ -1,5 +1,5 @@
 # Task: Create .gitignore and Verify Full Project Startup
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -28,12 +28,12 @@ This is the "definition of done" for Sprint 1 — if all of the above work, the 
 - `context/project-overview.md` — Tech stack to verify everything is wired
 
 ## ✅ Acceptance Criteria
-- [ ] `.gitignore` exists at the project root with appropriate Java/Maven/IDE patterns
-- [ ] `docker compose up -d` starts PostgreSQL without errors
-- [ ] The 4 schemas (`user_schema`, `product_schema`, `order_schema`, `review_schema`) exist in the database
-- [ ] `mvn clean compile` succeeds from the project root
-- [ ] `mvn spring-boot:run -pl app` starts the application without errors
-- [ ] The app connects to PostgreSQL (datasource logs show successful connection)
-- [ ] Spring Security is active but permissive (no 401 errors)
-- [ ] Spring Modulith is detected in startup logs
-- [ ] The project is ready to be committed to Git as the initial commit
+- [x] `.gitignore` exists at the project root with appropriate Java/Maven/IDE patterns
+- [x] `docker compose up -d` starts PostgreSQL without errors
+- [x] The 4 schemas (`user_schema`, `product_schema`, `order_schema`, `review_schema`) exist in the database
+- [x] `mvn clean compile` succeeds from the project root
+- [x] `mvn spring-boot:run -pl app` starts the application without errors
+- [x] The app connects to PostgreSQL (datasource logs show successful connection)
+- [x] Spring Security is active but permissive (no 401 errors)
+- [x] Spring Modulith is detected in startup logs
+- [x] The project is ready to be committed to Git as the initial commit

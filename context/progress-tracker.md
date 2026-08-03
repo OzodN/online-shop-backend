@@ -7,8 +7,8 @@
 ## Current Status
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
-- **Current Sprint:** S1 — Project Foundation
-- **Current Task:** T4 — Gitignore and Verification
+- **Current Sprint:** S2 — Common Module
+- **Current Task:** — (Sprint 2 starting)
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -21,8 +21,8 @@
 
 | Sprint | Name | Status |
 |---|---|---|
-| S1 | Project Foundation | 🟢 In Progress |
-| S2 | Common Module | ⬜ Not Started |
+| S1 | Project Foundation | ✅ Complete |
+| S2 | Common Module | 🟢 In Progress |
 | S3 | User Registration & Auth | ⬜ Not Started |
 | S4 | User Profile & Addresses | ⬜ Not Started |
 | S5 | Testing & Verification | ⬜ Not Started |
@@ -31,12 +31,12 @@
 - **[S1/T1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules) ✅
 - **[S1/T2]** Set up Docker Compose with PostgreSQL ✅
 - **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith ✅
+- **[S1/T4]** Gitignore and full project verification ✅
 
 ### In Progress
 *(none yet)*
 
 ### Next Up
-- **[S1/T4]** Gitignore and full verification
 - **[S2]** Implement `common` module:
    - `BaseEntity` and `SoftDeletableEntity`
    - Global exception handler (RFC 7807)
@@ -181,12 +181,18 @@
 
 *(Context needed to resume work in the next session)*
 
-**Session 1 (2026-07-13):** Completed system design brainstorming and created comprehensive system design document. Decomposed the design into modular knowledge base context files. No code has been written yet.
+**Session 1 (2026-07-13):** 
+- Completed system design brainstorming and created comprehensive system design document. Decomposed the design into modular knowledge base context files. No code has been written yet.
 
-**Session 2 (2026-07-15):** Assembled the virtual AI team (5 agents: Architecture Guardian, Code Quality Reviewer, Security Analyst, DBA Reviewer, QA Testing Coach). Created sprint map for Phase 1 (5 sprints, ~22 tasks). Generated detailed task files for Sprint 1 (4 tasks). Ready to begin coding T1: Initialize Maven Multi-Module Project.
+**Session 2 (2026-07-15):** 
+- Assembled the virtual AI team (5 agents: Architecture Guardian, Code Quality Reviewer, Security Analyst, DBA Reviewer, QA Testing Coach). Created sprint map for Phase 1 (5 sprints, ~22 tasks). Generated detailed task files for Sprint 1 (4 tasks). Ready to begin coding T1: Initialize Maven Multi-Module Project.
 
-**Session 3 (2026-07-25):** Completed T1: Initialize Maven Multi-Module Project. Code review by Architecture Guardian and Code Quality Reviewer identified: (1) main class was in wrong package (`dev.ozodn.onlineshop.app` → moved to `dev.ozodn.onlineshop`), (2) groupId inconsistency across modules (unified to `dev.ozodn.onlineshop` for all modules), (3) missing dependency management entries (added Lombok, Testcontainers BOM, PostgreSQL driver, Flyway), (4) decided on Spring Boot 3.5.x over 4.x due to ecosystem compatibility, (5) Lombok 1.18.36→1.18.38 to fix `ExceptionInInitializerError: TypeTag :: UNKNOWN` incompatibility with JDK 21. All issues resolved. `mvn clean compile` passes. Ready for T2: Docker Compose + PostgreSQL.
+**Session 3 (2026-07-25):** 
+- Completed T1: Initialize Maven Multi-Module Project. Code review by Architecture Guardian and Code Quality Reviewer identified: (1) main class was in wrong package (`dev.ozodn.onlineshop.app` → moved to `dev.ozodn.onlineshop`), (2) groupId inconsistency across modules (unified to `dev.ozodn.onlineshop` for all modules), (3) missing dependency management entries (added Lombok, Testcontainers BOM, PostgreSQL driver, Flyway), (4) decided on Spring Boot 3.5.x over 4.x due to ecosystem compatibility, (5) Lombok 1.18.36→1.18.38 to fix `ExceptionInInitializerError: TypeTag :: UNKNOWN` incompatibility with JDK 21. All issues resolved. `mvn clean compile` passes. Ready for T2: Docker Compose + PostgreSQL.
 
-**Session 4 (2026-08-02):** Completed T2: Set Up Docker Compose with PostgreSQL. Developer created `docker-compose.yaml`, `init.sql` (4 schemas), and `application.yaml`. Architecture Guardian review requested 3 changes: (1) `.yml` → `.yaml` naming — developer chose `.yaml` as project standard (recorded as AD #13), (2) missing JPA dialect — added `org.hibernate.dialect.PostgreSQLDialect`, (3) `public` in Flyway schemas list — removed. All review changes applied. Docker verified: PostgreSQL 16 starts, 4 schemas created, Spring Boot connects successfully. All 7/7 acceptance criteria met.
+**Session 4 (2026-08-02):** 
+- Completed T2: Set Up Docker Compose with PostgreSQL. Developer created `docker-compose.yaml`, `init.sql` (4 schemas), and `application.yaml`. Architecture Guardian review requested 3 changes: (1) `.yml` → `.yaml` naming — developer chose `.yaml` as project standard (recorded as AD #13), (2) missing JPA dialect — added `org.hibernate.dialect.PostgreSQLDialect`, (3) `public` in Flyway schemas list — removed. All review changes applied. Docker verified: PostgreSQL 16 starts, 4 schemas created, Spring Boot connects successfully. All 7/7 acceptance criteria met.
 
-**Session 5 (2026-08-03):** Completed T3: Configure Spring Boot, Spring Security & Spring Modulith. Developer implemented: (1) `SecurityConfig` with CSRF disabled, stateless sessions, and permitAll — placed in `app` module since global security wiring belongs where all modules are visible, (2) Spring Modulith BOM in parent POM (`v1.3.1`), `spring-modulith-starter-core` and `spring-modulith-starter-test` in `app/pom.xml`, (3) `ApplicationModulesTest` with `modules.verify()`. Spring runs successfully, modulith test passes. All 8/8 acceptance criteria met. Ready for T4.
+**Session 5 (2026-08-03):** 
+- Completed T3: Configure Spring Boot, Spring Security & Spring Modulith. Developer implemented: (1) `SecurityConfig` with CSRF disabled, stateless sessions, and permitAll — placed in `app` module since global security wiring belongs where all modules are visible, (2) Spring Modulith BOM in parent POM (`v1.3.1`), `spring-modulith-starter-core` and `spring-modulith-starter-test` in `app/pom.xml`, (3) `ApplicationModulesTest` with `modules.verify()`. Spring runs successfully, modulith test passes. All 8/8 acceptance criteria met. 
+- Completed T4: Gitignore and Full Verification. `.gitignore` created with Java/Maven/IntelliJ patterns; fixed two issues during review (removed erroneous `sprints/` ignore, added `application-local.yaml`). All 9/9 acceptance criteria met. **Sprint S1 — Project Foundation is now complete.** Ready for Sprint S2 — Common Module.

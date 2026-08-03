@@ -39,6 +39,4 @@ Desktop.ini
 ### Secrets & Environment Configs ###
 .env
 .env.local
-
-### Project implementation phase ###
-sprints/
+application-local.yaml
