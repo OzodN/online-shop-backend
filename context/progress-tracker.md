@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S1 — Project Foundation
-- **Current Task:** T3 — Configure Spring Boot, Spring Security, Spring Modulith
+- **Current Task:** T4 — Gitignore and Verification
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -30,12 +30,12 @@
 ### Completed
 - **[S1/T1]** Initialize Maven multi-module project structure (parent POM + `common`, `user`, `app` modules) ✅
 - **[S1/T2]** Set up Docker Compose with PostgreSQL ✅
+- **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith ✅
 
 ### In Progress
 *(none yet)*
 
 ### Next Up
-- **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith
 - **[S1/T4]** Gitignore and full verification
 - **[S2]** Implement `common` module:
    - `BaseEntity` and `SoftDeletableEntity`
@@ -187,4 +187,6 @@
 
 **Session 3 (2026-07-25):** Completed T1: Initialize Maven Multi-Module Project. Code review by Architecture Guardian and Code Quality Reviewer identified: (1) main class was in wrong package (`dev.ozodn.onlineshop.app` → moved to `dev.ozodn.onlineshop`), (2) groupId inconsistency across modules (unified to `dev.ozodn.onlineshop` for all modules), (3) missing dependency management entries (added Lombok, Testcontainers BOM, PostgreSQL driver, Flyway), (4) decided on Spring Boot 3.5.x over 4.x due to ecosystem compatibility, (5) Lombok 1.18.36→1.18.38 to fix `ExceptionInInitializerError: TypeTag :: UNKNOWN` incompatibility with JDK 21. All issues resolved. `mvn clean compile` passes. Ready for T2: Docker Compose + PostgreSQL.
 
-**Session 4 (2026-08-02):** Completed T2: Set Up Docker Compose with PostgreSQL. Developer created `docker-compose.yaml`, `init.sql` (4 schemas), and `application.yaml`. Architecture Guardian review requested 3 changes: (1) `.yml` → `.yaml` naming — developer chose `.yaml` as project standard (recorded as AD #13), (2) missing JPA dialect — added `org.hibernate.dialect.PostgreSQLDialect`, (3) `public` in Flyway schemas list — removed. All review changes applied. Docker verified: PostgreSQL 16 starts, 4 schemas created, Spring Boot connects successfully. All 7/7 acceptance criteria met. Ready for T3.
+**Session 4 (2026-08-02):** Completed T2: Set Up Docker Compose with PostgreSQL. Developer created `docker-compose.yaml`, `init.sql` (4 schemas), and `application.yaml`. Architecture Guardian review requested 3 changes: (1) `.yml` → `.yaml` naming — developer chose `.yaml` as project standard (recorded as AD #13), (2) missing JPA dialect — added `org.hibernate.dialect.PostgreSQLDialect`, (3) `public` in Flyway schemas list — removed. All review changes applied. Docker verified: PostgreSQL 16 starts, 4 schemas created, Spring Boot connects successfully. All 7/7 acceptance criteria met.
+
+**Session 5 (2026-08-03):** Completed T3: Configure Spring Boot, Spring Security & Spring Modulith. Developer implemented: (1) `SecurityConfig` with CSRF disabled, stateless sessions, and permitAll — placed in `app` module since global security wiring belongs where all modules are visible, (2) Spring Modulith BOM in parent POM (`v1.3.1`), `spring-modulith-starter-core` and `spring-modulith-starter-test` in `app/pom.xml`, (3) `ApplicationModulesTest` with `modules.verify()`. Spring runs successfully, modulith test passes. All 8/8 acceptance criteria met. Ready for T4.

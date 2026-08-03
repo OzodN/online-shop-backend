@@ -1,5 +1,5 @@
 # Task: Configure Spring Boot 4, Spring Security & Spring Modulith
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -30,11 +30,11 @@ You must set up:
 - `context/ai-workflow-rules.md` — Rule 4: Spring Modulith architecture tests
 
 ## ✅ Acceptance Criteria
-- [ ] Spring Security `SecurityFilterChain` bean is defined with CSRF disabled and stateless sessions
-- [ ] All endpoints are accessible without authentication (temporary — will be locked down in Sprint 3)
-- [ ] Spring Modulith BOM is in parent POM's `<dependencyManagement>`
-- [ ] `spring-modulith-starter-core` is a dependency in `app/pom.xml`
-- [ ] `spring-modulith-starter-test` is a test dependency in `app/pom.xml`
-- [ ] Application starts successfully with `mvn spring-boot:run` from the `app` module
-- [ ] No errors in startup logs related to Security or Modulith
-- [ ] `mvn clean compile` passes from project root
+- [x] Spring Security `SecurityFilterChain` bean is defined with CSRF disabled and stateless sessions
+- [x] All endpoints are accessible without authentication (temporary — will be locked down in Sprint 3)
+- [x] Spring Modulith BOM is in parent POM's `<dependencyManagement>`
+- [x] `spring-modulith-starter-core` is a dependency in `app/pom.xml`
+- [x] `spring-modulith-starter-test` is a test dependency in `app/pom.xml`
+- [x] Application starts successfully with `mvn spring-boot:run` from the `app` module
+- [x] No errors in startup logs related to Security or Modulith
+- [x] `mvn clean compile` passes from project root
