@@ -33,6 +33,7 @@
 - **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith ✅
 - **[S1/T4]** Gitignore and full project verification ✅
 - **[S2/T1]** Implement `BaseEntity` and `SoftDeletableEntity` in `common` module ✅
+- **[S2/T2]** Implement Global Exception Handler (RFC 7807) in `common` module ✅
 
 ### In Progress
 *(none)*
@@ -199,4 +200,5 @@
 - Completed T4: Gitignore and Full Verification. `.gitignore` created with Java/Maven/IntelliJ patterns; fixed two issues during review (removed erroneous `sprints/` ignore, added `application-local.yaml`). All 9/9 acceptance criteria met. **Sprint S1 — Project Foundation is now complete.** Ready for Sprint S2 — Common Module.
 
 **Session 6 (2026-08-10):**
-- Completed S2/T1: Implement `BaseEntity` and `SoftDeletableEntity`. Initial review by Architecture Guardian, Code Quality Reviewer, and DBA Reviewer identified 4 issues: (1) missing `@Id` annotation on primary key field — critical JPA bug, (2) `BaseEntity` not declared `abstract` — violated reference design, (3) unused validation imports (`Constraint`, `NotNull`, `ConstraintComposition`), (4) wildcard imports (`jakarta.persistence.*`, `lombok.*`). Developer fixed issues 1-3; issue 4 accepted as non-blocking nit. Re-review: all 3 reviewers approved. All 11/11 acceptance criteria met. `mvn clean compile` passes. Ready for S2/T2.
+- Completed S2/T1: Implement `BaseEntity` and `SoftDeletableEntity`. Initial review by Architecture Guardian, Code Quality Reviewer, and DBA Reviewer identified 4 issues: (1) missing `@Id` annotation on primary key field — critical JPA bug, (2) `BaseEntity` not declared `abstract` — violated reference design, (3) unused validation imports (`Constraint`, `NotNull`, `ConstraintComposition`), (4) wildcard imports (`jakarta.persistence.*`, `lombok.*`). Developer fixed issues 1-3; issue 4 accepted as non-blocking nit. Re-review: all 3 reviewers approved. All 11/11 acceptance criteria met. `mvn clean compile` passes.
+- Completed S2/T2: Implement Global Exception Handler (RFC 7807). Three review rounds: Round 1 identified 6 issues (BaseException not abstract, localhost:8080 URIs, AccessDeniedException protected constructor + naming collision with Spring Security, ConstraintViolation info leakage, formatting). Round 2 fixed most but caught wrong import (`java.nio.file.AccessDeniedException` instead of Spring Security's) and missed BaseException URI. Round 3: all fixed, all 3 reviewers approved. All 10/10 acceptance criteria met. Ready for S2/T3.

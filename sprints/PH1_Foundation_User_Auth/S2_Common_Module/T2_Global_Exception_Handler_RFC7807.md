@@ -1,5 +1,5 @@
 # Task: Implement Global Exception Handler (RFC 7807)
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -42,13 +42,13 @@ The handler must handle at least:
 - `context/code-standards.md` — Section 12.3 (logging levels: ERROR for unexpected failures, WARN for business rule violations)
 
 ## ✅ Acceptance Criteria
-- [ ] A base exception class exists in `common/.../exception/` that module-specific exceptions can extend
-- [ ] `ResourceNotFoundException` exists and carries the resource type and identifier
-- [ ] `DuplicateResourceException` exists for unique constraint violations
-- [ ] A `@RestControllerAdvice` global exception handler exists in `common/.../exception/`
-- [ ] The handler returns RFC 7807 `ProblemDetail` responses with `type`, `title`, `status`, `detail`, `instance` fields
-- [ ] `MethodArgumentNotValidException` is handled (validation errors → 400)
-- [ ] `ConstraintViolationException` is handled (validation errors → 400)
-- [ ] Generic unhandled exceptions return 500 with a safe message (no stack trace in response, but logged)
-- [ ] Error responses use correct logging levels (ERROR for 500s, WARN for 4xx)
-- [ ] `mvn clean compile` passes from the project root
+- [x] A base exception class exists in `common/.../exception/` that module-specific exceptions can extend
+- [x] `ResourceNotFoundException` exists and carries the resource type and identifier
+- [x] `DuplicateResourceException` exists for unique constraint violations
+- [x] A `@RestControllerAdvice` global exception handler exists in `common/.../exception/`
+- [x] The handler returns RFC 7807 `ProblemDetail` responses with `type`, `title`, `status`, `detail`, `instance` fields
+- [x] `MethodArgumentNotValidException` is handled (validation errors → 400)
+- [x] `ConstraintViolationException` is handled (validation errors → 400)
+- [x] Generic unhandled exceptions return 500 with a safe message (no stack trace in response, but logged)
+- [x] Error responses use correct logging levels (ERROR for 500s, WARN for 4xx)
+- [x] `mvn clean compile` passes from the project root
