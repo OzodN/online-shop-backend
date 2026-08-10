@@ -1,5 +1,5 @@
 # Task: Implement BaseEntity and SoftDeletableEntity
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -32,14 +32,14 @@ You must implement:
 - `context/code-standards.md` — Section 3.4 (internal module structure showing `entity/` package)
 
 ## ✅ Acceptance Criteria
-- [ ] `BaseEntity.java` exists at `common/src/main/java/dev/ozodn/onlineshop/common/entity/BaseEntity.java`
-- [ ] `BaseEntity` is `@MappedSuperclass` with `@EntityListeners(AuditingEntityListener.class)`
-- [ ] `BaseEntity` has all 6 fields: `id` (Long), `externalId` (UUID), `createdAt`, `updatedAt`, `createdBy`, `updatedBy`
-- [ ] `externalId` is initialized to `UUID.randomUUID()` and annotated `unique = true, updatable = false, nullable = false`
-- [ ] `id` uses `@GeneratedValue(strategy = GenerationType.IDENTITY)`
-- [ ] Audit fields use `@CreatedDate`, `@LastModifiedDate`, `@CreatedBy`, `@LastModifiedBy`
-- [ ] `BaseEntity` uses Lombok `@Getter @Setter`
-- [ ] `SoftDeletableEntity.java` exists at `common/src/main/java/dev/ozodn/onlineshop/common/entity/SoftDeletableEntity.java`
-- [ ] `SoftDeletableEntity` extends `BaseEntity` and adds `deletedAt`, `isDeleted()`, `softDelete()`
-- [ ] The placeholder `Main.java` is deleted
-- [ ] `mvn clean compile` passes from the project root
+- [x] `BaseEntity.java` exists at `common/src/main/java/dev/ozodn/onlineshop/common/entity/BaseEntity.java`
+- [x] `BaseEntity` is `@MappedSuperclass` with `@EntityListeners(AuditingEntityListener.class)`
+- [x] `BaseEntity` has all 6 fields: `id` (Long), `externalId` (UUID), `createdAt`, `updatedAt`, `createdBy`, `updatedBy`
+- [x] `externalId` is initialized to `UUID.randomUUID()` and annotated `unique = true, updatable = false, nullable = false`
+- [x] `id` uses `@GeneratedValue(strategy = GenerationType.IDENTITY)`
+- [x] Audit fields use `@CreatedDate`, `@LastModifiedDate`, `@CreatedBy`, `@LastModifiedBy`
+- [x] `BaseEntity` uses Lombok `@Getter @Setter`
+- [x] `SoftDeletableEntity.java` exists at `common/src/main/java/dev/ozodn/onlineshop/common/entity/SoftDeletableEntity.java`
+- [x] `SoftDeletableEntity` extends `BaseEntity` and adds `deletedAt`, `isDeleted()`, `softDelete()`
+- [x] The placeholder `Main.java` is deleted
+- [x] `mvn clean compile` passes from the project root

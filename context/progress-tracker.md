@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S2 — Common Module
-- **Current Task:** — (Sprint 2 starting)
+- **Current Task:** T1 — BaseEntity & SoftDeletableEntity ✅ Complete
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -32,9 +32,10 @@
 - **[S1/T2]** Set up Docker Compose with PostgreSQL ✅
 - **[S1/T3]** Configure Spring Boot 3.5, Spring Security, Spring Modulith ✅
 - **[S1/T4]** Gitignore and full project verification ✅
+- **[S2/T1]** Implement `BaseEntity` and `SoftDeletableEntity` in `common` module ✅
 
 ### In Progress
-*(none yet)*
+*(none)*
 
 ### Next Up
 - **[S2]** Implement `common` module:
@@ -196,3 +197,6 @@
 **Session 5 (2026-08-03):** 
 - Completed T3: Configure Spring Boot, Spring Security & Spring Modulith. Developer implemented: (1) `SecurityConfig` with CSRF disabled, stateless sessions, and permitAll — placed in `app` module since global security wiring belongs where all modules are visible, (2) Spring Modulith BOM in parent POM (`v1.3.1`), `spring-modulith-starter-core` and `spring-modulith-starter-test` in `app/pom.xml`, (3) `ApplicationModulesTest` with `modules.verify()`. Spring runs successfully, modulith test passes. All 8/8 acceptance criteria met. 
 - Completed T4: Gitignore and Full Verification. `.gitignore` created with Java/Maven/IntelliJ patterns; fixed two issues during review (removed erroneous `sprints/` ignore, added `application-local.yaml`). All 9/9 acceptance criteria met. **Sprint S1 — Project Foundation is now complete.** Ready for Sprint S2 — Common Module.
+
+**Session 6 (2026-08-10):**
+- Completed S2/T1: Implement `BaseEntity` and `SoftDeletableEntity`. Initial review by Architecture Guardian, Code Quality Reviewer, and DBA Reviewer identified 4 issues: (1) missing `@Id` annotation on primary key field — critical JPA bug, (2) `BaseEntity` not declared `abstract` — violated reference design, (3) unused validation imports (`Constraint`, `NotNull`, `ConstraintComposition`), (4) wildcard imports (`jakarta.persistence.*`, `lombok.*`). Developer fixed issues 1-3; issue 4 accepted as non-blocking nit. Re-review: all 3 reviewers approved. All 11/11 acceptance criteria met. `mvn clean compile` passes. Ready for S2/T2.
