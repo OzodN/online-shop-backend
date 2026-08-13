@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S2 — Common Module
-- **Current Task:** T1 — BaseEntity & SoftDeletableEntity ✅ Complete
+- **Current Task:** T3 — Shared Pagination DTOs ✅ Complete
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -34,6 +34,7 @@
 - **[S1/T4]** Gitignore and full project verification ✅
 - **[S2/T1]** Implement `BaseEntity` and `SoftDeletableEntity` in `common` module ✅
 - **[S2/T2]** Implement Global Exception Handler (RFC 7807) in `common` module ✅
+- **[S2/T3]** Implement Shared Pagination DTOs in `common` module ✅
 
 ### In Progress
 *(none)*

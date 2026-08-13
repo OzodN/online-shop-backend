@@ -1,5 +1,8 @@
 # Task: Implement Shared Pagination DTOs
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** 
+- [ ] TODO 
+- [ ] IN PROGRESS 
+- [x] DONE
 
 ## 🎯 Objective
 
@@ -40,10 +43,10 @@ You'll need:
 - `context/code-standards.md` — Section 3.4 (internal module structure showing `dto/` package)
 
 ## ✅ Acceptance Criteria
-- [ ] `PagedResponse.java` exists at `common/.../dto/PagedResponse.java` as a Java Record
-- [ ] `PagedResponse<T>` has a `content` field (List<T>) and a `page` field (page metadata)
-- [ ] Page metadata contains: `number` (int), `size` (int), `totalElements` (long), `totalPages` (int)
-- [ ] A static factory method `PagedResponse.from(Page<T>)` exists to convert Spring Data's Page
-- [ ] The JSON output matches the project standard format (`content` + `page` with nested fields)
-- [ ] Both DTOs are Java Records (not classes)
-- [ ] `mvn clean compile` passes from the project root
+- [x] `PagedResponse.java` exists at `common/.../dto/PagedResponse.java` as a Java Record
+- [x] `PagedResponse<T>` has a `content` field (List<T>) and a `page` field (page metadata)
+- [x] Page metadata contains: `number` (int), `size` (int), `totalElements` (long), `totalPages` (int)
+- [x] A static factory method `PagedResponse.from(Page<T>)` exists to convert Spring Data's Page
+- [x] The JSON output matches the project standard format (`content` + `page` with nested fields)
+- [x] Both DTOs are Java Records (not classes)
+- [x] `mvn clean compile` passes from the project root
