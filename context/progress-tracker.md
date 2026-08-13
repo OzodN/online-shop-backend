@@ -7,8 +7,8 @@
 ## Current Status
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
-- **Current Sprint:** S2 — Common Module
-- **Current Task:** S2 Complete ✅ — Ready for S3
+- **Current Sprint:** S3 — User Registration & Auth
+- **Current Task:** T1 — Flyway Migrations for User Schema
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---

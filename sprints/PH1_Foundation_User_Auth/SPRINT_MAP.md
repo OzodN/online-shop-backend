@@ -1,6 +1,6 @@
 # 📋 Sprint Map — Phase 1: Foundation + User & Auth 🔐
 
-> **Planning approach:** Rolling Wave Planning — S1 (complete) and S2 (current) have detailed task files. Future sprints are outlined but will be detailed when we reach them.
+> **Planning approach:** Rolling Wave Planning — S1, S2 (complete), and S3 (current) have detailed task files. Future sprints are outlined but will be detailed when we reach them.
 
 ---
 
@@ -15,12 +15,12 @@ sprints/
     │   ├── T2_Docker_Compose_PostgreSQL.md
     │   ├── T3_Configure_Spring_Security_Modulith.md
     │   └── T4_Gitignore_And_Verification.md
-    ├── S2_Common_Module/                      ← 🟢 CURRENT SPRINT
+    ├── S2_Common_Module/                      ← ✅ COMPLETE
     │   ├── T1_BaseEntity_SoftDeletableEntity.md
     │   ├── T2_Global_Exception_Handler_RFC7807.md
     │   ├── T3_Shared_Pagination_DTOs.md
     │   └── T4_JPA_Auditing_Configuration.md
-    ├── S3_User_Registration_And_Auth/         ← ⬜ PLANNED
+    ├── S3_User_Registration_And_Auth/         ← 🟢 CURRENT SPRINT
     │   ├── T1_Flyway_Migrations_User_Schema.md
     │   ├── T2_User_Role_Entities_Repositories.md
     │   ├── T3_User_Registration_Endpoint.md
@@ -46,8 +46,8 @@ sprints/
 | Sprint | Name | Focus | Tasks | Status |
 |---|---|---|---|---|
 | **S1** | Project Foundation | Maven multi-module, Docker Compose, Spring Security/Modulith config, .gitignore | 4 | ✅ Complete |
-| **S2** | Common Module | BaseEntity, SoftDeletableEntity, RFC 7807 exception handler, shared DTOs, JPA auditing | 4 | 🟢 Current |
-| **S3** | User Registration & Auth | Flyway migrations, User/Role entities, registration, JWT token service, login/refresh/logout | 5 | ⬜ Planned |
+| **S2** | Common Module | BaseEntity, SoftDeletableEntity, RFC 7807 exception handler, shared DTOs, JPA auditing | 4 | ✅ Complete |
+| **S3** | User Registration & Auth | Flyway migrations, User/Role entities, registration, JWT token service, login/refresh/logout | 5 | 🟢 Current |
 | **S4** | User Profile & Addresses | Profile CRUD, become-seller, address entity + CRUD, Swagger/OpenAPI | 5 | ⬜ Planned |
 | **S5** | Testing & Verification | Unit tests, integration tests (Testcontainers), Spring Modulith architecture test | 4 | ⬜ Planned |
 
