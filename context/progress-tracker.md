@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S2 — Common Module
-- **Current Task:** T3 — Shared Pagination DTOs ✅ Complete
+- **Current Task:** S2 Complete ✅ — Ready for S3
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -22,8 +22,8 @@
 | Sprint | Name | Status |
 |---|---|---|
 | S1 | Project Foundation | ✅ Complete |
-| S2 | Common Module | 🟢 In Progress |
-| S3 | User Registration & Auth | ⬜ Not Started |
+| S2 | Common Module | ✅ Complete |
+| S3 | User Registration & Auth | 🟢 In Progress |
 | S4 | User Profile & Addresses | ⬜ Not Started |
 | S5 | Testing & Verification | ⬜ Not Started |
 
@@ -35,6 +35,7 @@
 - **[S2/T1]** Implement `BaseEntity` and `SoftDeletableEntity` in `common` module ✅
 - **[S2/T2]** Implement Global Exception Handler (RFC 7807) in `common` module ✅
 - **[S2/T3]** Implement Shared Pagination DTOs in `common` module ✅
+- **[S2/T4]** Configure JPA Auditing in `common` module ✅
 
 ### In Progress
 *(none)*

@@ -1,5 +1,5 @@
 # Task: Configure JPA Auditing
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -33,10 +33,10 @@ You must implement:
 - `context/code-standards.md` — Section 3.4 (module structure — decide where `config/` fits)
 
 ## ✅ Acceptance Criteria
-- [ ] A `@Configuration` class exists in `common/.../config/` with `@EnableJpaAuditing`
-- [ ] An `AuditorAware<String>` implementation exists and is registered as a Spring Bean
-- [ ] The `AuditorAware` extracts the current user from `SecurityContextHolder` when authenticated
-- [ ] The `AuditorAware` returns a safe fallback (e.g., `"system"`) when no authentication exists
-- [ ] `@EnableJpaAuditing` references the `AuditorAware` bean via `auditorAwareRef`
-- [ ] `mvn clean compile` passes from the project root
-- [ ] The Spring Boot application starts without auditing-related errors
+- [x] A `@Configuration` class exists in `common/.../config/` with `@EnableJpaAuditing`
+- [x] An `AuditorAware<String>` implementation exists and is registered as a Spring Bean
+- [x] The `AuditorAware` extracts the current user from `SecurityContextHolder` when authenticated
+- [x] The `AuditorAware` returns a safe fallback (e.g., `"system"`) when no authentication exists
+- [x] `@EnableJpaAuditing` references the `AuditorAware` bean via `auditorAwareRef`
+- [x] `mvn clean compile` passes from the project root
+- [x] The Spring Boot application starts without auditing-related errors
