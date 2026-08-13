@@ -47,12 +47,13 @@ This project is being built by a **Junior Backend Developer** as a learning exer
 5. **`context/architecture/flows-and-security.md`** — JWT authentication flow, RBAC roles, order lifecycle state machines, checkout flow, and domain events
 6. **`context/code-standards.md`** — Internal module structure, validation strategy, pagination format, logging, Flyway migration naming, and non-functional considerations
 7. **`context/ai-workflow-rules.md`** — **CRITICAL** — Strict rules you MUST follow when writing code (module isolation, DTO discipline, testing requirements, etc.)
-8. **`context/progress-tracker.md`** — Current phase, current sprint, completed tasks, in-progress work, and session notes from previous sessions
+8. **`context/progress-tracker.md`** — Current phase, current sprint, completed tasks, in-progress work
+9. **`context/session-notes.md`** — Detailed session log with review decisions, bug fixes, and context for resuming work
 
 ### Sprint Files to Read:
 
-9. **`sprints/PH{N}_*/SPRINT_MAP.md`** — Overview of all sprints for the current phase (check progress-tracker.md for which phase is active)
-10. **`sprints/PH{N}_*/S{N}_*/`** — Task files for the current sprint (check progress-tracker.md for which sprint is active)
+10. **`sprints/PH{N}_*/SPRINT_MAP.md`** — Overview of all sprints for the current phase (check progress-tracker.md for which phase is active)
+11. **`sprints/PH{N}_*/S{N}_*/`** — Task files for the current sprint (check progress-tracker.md for which sprint is active)
 
 ---
 
@@ -70,7 +71,8 @@ context/
 │   └── flows-and-security.md
 ├── code-standards.md
 ├── ai-workflow-rules.md
-└── progress-tracker.md
+├── progress-tracker.md
+└── session-notes.md
 
 sprints/
 └── PH1_Foundation_User_Auth/
@@ -91,7 +93,8 @@ sprints/
 ## After Completing Work
 
 After completing any meaningful implementation task:
-1. **Update `context/progress-tracker.md`** — move completed tasks, update "In Progress" and "Next Up", add session notes.
-2. **Update the sprint task file** — mark the task status as DONE and check off completed acceptance criteria.
-3. **If you made architecture decisions**, record them in the "Architecture Decisions" table in `progress-tracker.md`.
-4. **If unresolved questions arose**, add them to the "Open Questions" section.
+1. **Update `context/progress-tracker.md`** — move completed tasks, update "In Progress" and "Next Up".
+2. **Update `context/session-notes.md`** — add a session entry with what was accomplished, decisions made, and issues found.
+3. **Update the sprint task file** — mark the task status as DONE and check off completed acceptance criteria.
+4. **If you made architecture decisions**, record them in the "Architecture Decisions" table in `progress-tracker.md`.
+5. **If unresolved questions arose**, add them to the "Open Questions" section.
