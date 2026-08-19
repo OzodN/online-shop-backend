@@ -1,5 +1,5 @@
 # Task: Flyway Migrations for User Schema
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -58,12 +58,12 @@ Create the following tables inside `user_schema`:
 - `context/code-standards.md` — Section 12.4 (Flyway migration naming convention)
 
 ## ✅ Acceptance Criteria
-- [ ] Migration file `V1__create_user_schema_tables.sql` exists at `user/src/main/resources/db/migration/`
-- [ ] `users` table is created in `user_schema` with all columns matching the ERD
-- [ ] `roles` table is created in `user_schema` with `CUSTOMER`, `SELLER`, `ADMIN` pre-seeded
-- [ ] `user_roles` join table is created with composite PK and FK constraints
-- [ ] `refresh_tokens` table is created with FK to `users` and `ON DELETE CASCADE`
-- [ ] All tables use `user_schema` (via `SET search_path` or fully-qualified names)
-- [ ] Flyway is configured to scan `user/src/main/resources/db/migration/` (update `application.yaml` if needed with `spring.flyway.locations`)
-- [ ] `mvn clean compile` passes from the project root
-- [ ] The Spring Boot application starts and Flyway runs the migration successfully (tables are created in PostgreSQL)
+- [x] Migration file `V1__create_user_schema_tables.sql` exists at `user/src/main/resources/db/migration/`
+- [x] `users` table is created in `user_schema` with all columns matching the ERD
+- [x] `roles` table is created in `user_schema` with `CUSTOMER`, `SELLER`, `ADMIN` pre-seeded
+- [x] `user_roles` join table is created with composite PK and FK constraints
+- [x] `refresh_tokens` table is created with FK to `users` and `ON DELETE CASCADE`
+- [x] All tables use `user_schema` (via `SET search_path` or fully-qualified names)
+- [x] Flyway is configured to scan `user/src/main/resources/db/migration/` (update `application.yaml` if needed with `spring.flyway.locations`)
+- [x] `mvn clean compile` passes from the project root
+- [x] The Spring Boot application starts and Flyway runs the migration successfully (tables are created in PostgreSQL)

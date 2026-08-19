@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S3 — User Registration & Auth
-- **Current Task:** T1 — Flyway Migrations for User Schema
+- **Current Task:** T2 — User, Role, RefreshToken Entities & Repositories
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -36,6 +36,7 @@
 - **[S2/T2]** Implement Global Exception Handler (RFC 7807) in `common` module ✅
 - **[S2/T3]** Implement Shared Pagination DTOs in `common` module ✅
 - **[S2/T4]** Configure JPA Auditing in `common` module ✅
+- **[S3/T1]** Flyway Migrations for User Schema ✅
 
 ### In Progress
 *(none)*
