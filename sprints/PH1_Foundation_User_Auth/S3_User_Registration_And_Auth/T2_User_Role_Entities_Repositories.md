@@ -1,5 +1,5 @@
 # Task: User, Role, and RefreshToken Entities & Repositories
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -53,15 +53,15 @@ You must implement:
 - `context/code-standards.md` — Section 3.4 (module structure — `entity/` and `repository/` packages)
 
 ## ✅ Acceptance Criteria
-- [ ] `User.java` exists in `user/entity/` — extends `SoftDeletableEntity`, maps to `user_schema.users`
-- [ ] `User` has `email`, `passwordHash`, `firstName`, `lastName`, `phone` fields with correct `@Column` mappings
-- [ ] `User` has `@ManyToMany` relationship with `Role` via `user_roles` join table
-- [ ] `Role.java` exists in `user/entity/` — maps to `user_schema.roles` with `name` field
-- [ ] `RefreshToken.java` exists in `user/entity/` — maps to `user_schema.refresh_tokens` with `user`, `token`, `expiresAt`, `revoked`
-- [ ] `UserRepository.java` exists in `user/repository/` with `findByEmail`, `findByExternalId`, `existsByEmail`
-- [ ] `RoleRepository.java` exists in `user/repository/` with `findByName`
-- [ ] `RefreshTokenRepository.java` exists in `user/repository/` with `findByToken`, `deleteByUser`
-- [ ] All entities use appropriate Lombok annotations (`@Getter`, `@Setter`, `@Builder`, etc.)
-- [ ] The placeholder `Main.java` in the user module is deleted (if it exists)
-- [ ] `mvn clean compile` passes from the project root
-- [ ] The Spring Boot application starts without entity mapping errors (Hibernate validates against the Flyway-created schema)
+- [x] `User.java` exists in `user/entity/` — extends `SoftDeletableEntity`, maps to `user_schema.users`
+- [x] `User` has `email`, `passwordHash`, `firstName`, `lastName`, `phone` fields with correct `@Column` mappings
+- [x] `User` has `@ManyToMany` relationship with `Role` via `user_roles` join table
+- [x] `Role.java` exists in `user/entity/` — maps to `user_schema.roles` with `name` field
+- [x] `RefreshToken.java` exists in `user/entity/` — maps to `user_schema.refresh_tokens` with `user`, `token`, `expiresAt`, `revoked`
+- [x] `UserRepository.java` exists in `user/repository/` with `findByEmail`, `findByExternalId`, `existsByEmail`
+- [x] `RoleRepository.java` exists in `user/repository/` with `findByName`
+- [x] `RefreshTokenRepository.java` exists in `user/repository/` with `findByToken`, `deleteByUser`
+- [x] All entities use appropriate Lombok annotations (`@Getter`, `@Setter`, `@Builder`, etc.)
+- [x] The placeholder `Main.java` in the user module is deleted (if it exists)
+- [x] `mvn clean compile` passes from the project root
+- [x] The Spring Boot application starts without entity mapping errors (Hibernate validates against the Flyway-created schema)
