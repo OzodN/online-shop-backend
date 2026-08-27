@@ -78,3 +78,12 @@
 
 - The base Java package is `dev.ozodn.onlineshop`.
 - Each module's code lives under `dev.ozodn.onlineshop.{modulename}` (e.g., `dev.ozodn.onlineshop.user`, `dev.ozodn.onlineshop.product`).
+
+## Rule 13: OpenAPI Documentation
+
+- Every `@RestController` class MUST have a `@Tag(name, description)` annotation.
+- Every endpoint method MUST have `@Operation(summary, description)` and `@ApiResponse` annotations for all expected status codes.
+- Authenticated endpoints MUST declare `@SecurityRequirement(name = "bearerAuth")`.
+- Request/Response DTO records SHOULD have `@Schema(description, example)` on non-obvious fields.
+- OpenAPI annotations are added by the **Swagger Writer agent** after code review passes, not by the developer manually.
+- The Swagger Writer agent's system prompt is stored at `context/agent-prompts/swagger-writer.md`.

@@ -31,7 +31,7 @@ sprints/
     │   ├── T2_Become_Seller_Endpoint.md
     │   ├── T3_Address_Migration_Entity.md
     │   ├── T4_Address_CRUD_Endpoints.md
-    │   └── T5_Swagger_OpenAPI_Setup.md
+    │   └── T5_OpenAPI_Global_Config.md
     └── S5_Testing_And_Verification/           ← ⬜ PLANNED
         ├── T1_Unit_Tests_AuthService.md
         ├── T2_Unit_Tests_UserService_AddressService.md

@@ -57,7 +57,7 @@
    - User profile CRUD
    - "Become seller" endpoint
    - Address CRUD
-   - Set up Swagger/OpenAPI
+   - OpenAPI global config (OpenApiConfig class + Swagger UI verification)
 - **[S5]** Testing:
    - Write unit tests + integration tests with Testcontainers
    - Add Spring Modulith architecture verification test
@@ -180,6 +180,7 @@
 | 11 | Rolling Wave Planning with sprint-based task management | Only the current sprint has detailed tasks; future sprints are outlined but detailed when reached | 2026-07-15 |
 | 12 | Spring Boot 3.5.x instead of 4.x | Some Spring ecosystem dependencies (Spring Modulith, springdoc-openapi, etc.) not yet fully compatible with Spring Boot 4; revisit when ecosystem catches up | 2026-07-25 |
 | 13 | Use `.yaml` extension instead of `.yml` for all YAML files | `.yaml` is the official extension per the YAML specification; consistency across `docker-compose.yaml`, `application.yaml`, and all future config files | 2026-08-02 |
+| 14 | Swagger Writer agent writes OpenAPI annotations (exception to mentorship model) | Swagger annotations are repetitive documentation boilerplate that don't build engineering skills; developer focuses on business logic while agent handles `@Operation`, `@Tag`, `@ApiResponse`, `@Schema` after code review passes | 2026-08-24 |
 
 ---
 
