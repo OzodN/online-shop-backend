@@ -7,6 +7,9 @@ import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Entity representing a registered user account in the system.
+ */
 @Entity
 @Table(name = "users", schema = "user_schema")
 @Getter

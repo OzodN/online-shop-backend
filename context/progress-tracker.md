@@ -39,6 +39,7 @@
 - **[S3/T1]** Flyway Migrations for User Schema ✅
 - **[S3/T2]** User, Role, RefreshToken Entities & Repositories ✅
 - **[S3/T3]** User Registration Endpoint ✅
+- **[S3/T4]** JWT Token Service ✅
 
 ### In Progress
 *(none)*
@@ -50,10 +51,8 @@
    - Shared pagination DTOs
    - JPA auditing configuration
 - **[S3]** Implement `user` module:
-   - User registration (default CUSTOMER role)
    - Login (JWT access + refresh tokens)
    - Token refresh and logout
-   - Flyway migrations for `user_schema`
 - **[S4]** Implement `user` module (continued):
    - User profile CRUD
    - "Become seller" endpoint
@@ -182,6 +181,7 @@
 | 12 | Spring Boot 3.5.x instead of 4.x | Some Spring ecosystem dependencies (Spring Modulith, springdoc-openapi, etc.) not yet fully compatible with Spring Boot 4; revisit when ecosystem catches up | 2026-07-25 |
 | 13 | Use `.yaml` extension instead of `.yml` for all YAML files | `.yaml` is the official extension per the YAML specification; consistency across `docker-compose.yaml`, `application.yaml`, and all future config files | 2026-08-02 |
 | 14 | Swagger Writer agent writes OpenAPI annotations (exception to mentorship model) | Swagger annotations are repetitive documentation boilerplate that don't build engineering skills; developer focuses on business logic while agent handles `@Operation`, `@Tag`, `@ApiResponse`, `@Schema` after code review passes | 2026-08-24 |
+| 15 | Javadoc Writer agent adds Javadoc comments (exception to mentorship model) | Javadoc is mechanical documentation boilerplate; uses targeted file-list approach (~3,100 tokens/invocation) with `flash` model; covers services, entities, repositories, exceptions; skips DTOs, mappers, configs; Swagger Writer keeps controller method docs | 2026-08-28 |
 
 ---
 

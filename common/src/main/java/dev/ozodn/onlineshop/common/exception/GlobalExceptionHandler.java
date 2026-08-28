@@ -19,6 +19,9 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Translates application and framework exceptions into RFC 7807 {@link ProblemDetail} HTTP responses.
+ */
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {

@@ -11,6 +11,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Serves as the base mapped superclass providing auditing and identifier fields for JPA entities.
+ */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter

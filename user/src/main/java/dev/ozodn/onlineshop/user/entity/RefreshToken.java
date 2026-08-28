@@ -7,6 +7,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
+/**
+ * Entity representing a refresh token used for session renewal.
+ */
 @Entity
 @Table(name = "refresh_tokens", schema = "user_schema")
 @EntityListeners(AuditingEntityListener.class)

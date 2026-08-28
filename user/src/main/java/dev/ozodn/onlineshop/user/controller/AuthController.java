@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * REST controller for user registration and authentication endpoints.
+ */
 @Tag(name = "Authentication", description = "User registration and authentication endpoints")
 @RestController
 @RequestMapping("/api/v1/auth")

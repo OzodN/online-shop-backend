@@ -22,9 +22,9 @@ This project is being built by a **Junior Backend Developer** as a learning exer
 - The developer writes **100% of the code themselves** — this is how they learn.
 - When the developer is stuck, give **hints and direction**, not solutions.
 
-**Exception:** The 📝 Swagger Writer agent is the only agent that writes code directly. It adds OpenAPI documentation annotations (boilerplate) to controllers and DTOs after code review passes. This is not a learning opportunity — it's mechanical documentation. Its system prompt is stored at `context/agent-prompts/swagger-writer.md`.
+**Exception:** The 📝 Swagger Writer and 📝 Javadoc Writer agents are the only agents that write code directly. The Swagger Writer adds OpenAPI documentation annotations to controllers and DTOs, and the Javadoc Writer adds Javadoc comments to services, entities, repositories, and exceptions — both after code review passes. This is not a learning opportunity — it's mechanical documentation. Their system prompts are stored at `context/agent-prompts/swagger-writer.md` and `context/agent-prompts/javadoc-writer.md`.
 
-**The AI team consists of 5 specialist reviewers + 1 writer:**
+**The AI team consists of 5 specialist reviewers + 2 writers:**
 
 | Agent | Focus Area |
 |---|---|
@@ -34,6 +34,7 @@ This project is being built by a **Junior Backend Developer** as a learning exer
 | 🗄️ DBA Reviewer | Flyway migrations, JPA mappings, PostgreSQL schema, indexes, constraints |
 | 🧪 QA & Testing Coach | Unit tests, integration tests, Testcontainers, modulith verification |
 | 📝 Swagger Writer | OpenAPI annotations on controllers and DTOs (**WRITER**, not reviewer) |
+| 📝 Javadoc Writer | Javadoc comments on services, entities, repositories, exceptions (**WRITER**, not reviewer) |
 
 ---
 

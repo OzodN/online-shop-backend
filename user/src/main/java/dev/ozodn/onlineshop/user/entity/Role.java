@@ -3,6 +3,9 @@ package dev.ozodn.onlineshop.user.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * Entity representing a user security role in the system.
+ */
 @Entity
 @Table(name = "roles", schema = "user_schema")
 @Getter

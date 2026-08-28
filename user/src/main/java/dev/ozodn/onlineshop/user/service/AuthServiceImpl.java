@@ -16,6 +16,9 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Service implementation of {@link AuthService} handling user registration and authentication.
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j

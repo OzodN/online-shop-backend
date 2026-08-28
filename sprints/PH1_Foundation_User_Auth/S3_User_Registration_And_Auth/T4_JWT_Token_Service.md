@@ -1,5 +1,5 @@
 # Task: JWT Token Service
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -49,14 +49,14 @@ You must implement:
 - `context/code-standards.md` — Section 12.3 (logging — never log secrets at INFO)
 
 ## ✅ Acceptance Criteria
-- [ ] `jjwt` dependencies (`jjwt-api`, `jjwt-impl`, `jjwt-jackson`) are added to the parent POM's `<dependencyManagement>` and the appropriate module's POM
-- [ ] JWT configuration properties (`secret`, `access-token-expiration-ms`, `refresh-token-expiration-ms`) are defined in `application.yaml`
-- [ ] A `@ConfigurationProperties` class exists to bind the JWT properties
-- [ ] `JwtService.java` exists with `generateAccessToken(User)` that creates a signed JWT with subject, roles claim, iat, and exp
-- [ ] `JwtService.java` has `generateRefreshToken(User)` that creates a UUID string, persists it in `refresh_tokens` table, and returns it
-- [ ] `JwtService.java` has `extractUsername(String token)` and `isTokenValid(String token)` methods
-- [ ] Access token uses HMAC-SHA256 signing
-- [ ] Access token TTL is configurable (default: 15 minutes)
-- [ ] Refresh token TTL is configurable (default: 7 days)
-- [ ] `mvn clean compile` passes from the project root
-- [ ] The application starts without configuration errors
+- [x] `jjwt` dependencies (`jjwt-api`, `jjwt-impl`, `jjwt-jackson`) are added to the parent POM's `<dependencyManagement>` and the appropriate module's POM
+- [x] JWT configuration properties (`secret`, `access-token-expiration-ms`, `refresh-token-expiration-ms`) are defined in `application.yaml`
+- [x] A `@ConfigurationProperties` class exists to bind the JWT properties
+- [x] `JwtService.java` exists with `generateAccessToken(User)` that creates a signed JWT with subject, roles claim, iat, and exp
+- [x] `JwtService.java` has `generateRefreshToken(User)` that creates a UUID string, persists it in `refresh_tokens` table, and returns it
+- [x] `JwtService.java` has `extractUsername(String token)` and `isTokenValid(String token)` methods
+- [x] Access token uses HMAC-SHA256 signing
+- [x] Access token TTL is configurable (default: 15 minutes)
+- [x] Refresh token TTL is configurable (default: 7 days)
+- [x] `mvn clean compile` passes from the project root
+- [x] The application starts without configuration errors
