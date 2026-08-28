@@ -1,5 +1,5 @@
 # Task: User Registration Endpoint
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -52,17 +52,17 @@ You must implement the full vertical slice: DTO → Mapper → Service → Contr
 - `context/code-standards.md` — Section 12.1 (validation strategy)
 
 ## ✅ Acceptance Criteria
-- [ ] `RegisterRequest.java` is a Java Record with `email`, `password`, `firstName`, `lastName`, `phone` — all with Jakarta validation annotations
-- [ ] `UserResponse.java` is a Java Record with `externalId`, `email`, `firstName`, `lastName`, `phone`, `roles`, `createdAt` — no internal `id` or `passwordHash`
-- [ ] `UserMapper.java` is a MapStruct `@Mapper` that maps `User` → `UserResponse` with custom `roles` mapping
-- [ ] `AuthService.java` has a `register()` method that validates email uniqueness, hashes password, assigns CUSTOMER role, saves user
-- [ ] `AuthService` uses `PasswordEncoder` for password hashing (BCrypt)
-- [ ] `AuthService` throws `DuplicateResourceException` (from `common`) when email already exists
-- [ ] `AuthController.java` has `POST /register` endpoint that returns HTTP 201 with `UserResponse`
-- [ ] Controller uses `@Valid` for request validation
-- [ ] `PasswordEncoder` bean is registered (in `SecurityConfig` or appropriate config class)
-- [ ] `mvn clean compile` passes from the project root
-- [ ] `POST /api/v1/auth/register` works end-to-end (test manually with curl or Postman):
+- [x] `RegisterRequest.java` is a Java Record with `email`, `password`, `firstName`, `lastName`, `phone` — all with Jakarta validation annotations
+- [x] `UserResponse.java` is a Java Record with `externalId`, `email`, `firstName`, `lastName`, `phone`, `roles`, `createdAt` — no internal `id` or `passwordHash`
+- [x] `UserMapper.java` is a MapStruct `@Mapper` that maps `User` → `UserResponse` with custom `roles` mapping
+- [x] `AuthService.java` has a `register()` method that validates email uniqueness, hashes password, assigns CUSTOMER role, saves user
+- [x] `AuthService` uses `PasswordEncoder` for password hashing (BCrypt)
+- [x] `AuthService` throws `DuplicateResourceException` (from `common`) when email already exists
+- [x] `AuthController.java` has `POST /register` endpoint that returns HTTP 201 with `UserResponse`
+- [x] Controller uses `@Valid` for request validation
+- [x] `PasswordEncoder` bean is registered (in `SecurityConfig` or appropriate config class)
+- [x] `mvn clean compile` passes from the project root
+- [x] `POST /api/v1/auth/register` works end-to-end (test manually with curl or Postman):
   - Successful registration returns 201 + user data
   - Duplicate email returns 409 Conflict (RFC 7807 format)
   - Invalid input returns 400 Bad Request (RFC 7807 format)
