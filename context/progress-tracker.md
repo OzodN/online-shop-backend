@@ -40,19 +40,12 @@
 - **[S3/T2]** User, Role, RefreshToken Entities & Repositories ✅
 - **[S3/T3]** User Registration Endpoint ✅
 - **[S3/T4]** JWT Token Service ✅
+- **[S3/T5]** Login, Refresh, Logout, & Security Filter ✅
 
 ### In Progress
 *(none)*
 
 ### Next Up
-- **[S2]** Implement `common` module:
-   - `BaseEntity` and `SoftDeletableEntity`
-   - Global exception handler (RFC 7807)
-   - Shared pagination DTOs
-   - JPA auditing configuration
-- **[S3]** Implement `user` module:
-   - Login (JWT access + refresh tokens)
-   - Token refresh and logout
 - **[S4]** Implement `user` module (continued):
    - User profile CRUD
    - "Become seller" endpoint

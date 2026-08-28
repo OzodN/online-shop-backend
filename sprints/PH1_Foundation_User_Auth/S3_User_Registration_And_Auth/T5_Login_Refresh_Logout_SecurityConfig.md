@@ -1,5 +1,5 @@
 # Task: Login, Refresh, Logout Endpoints & Security Filter Configuration
-**Status:** [x] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -84,22 +84,22 @@ You must implement:
 - Review `app/src/main/java/dev/ozodn/onlineshop/config/SecurityConfig.java` (the existing config you'll modify)
 
 ## ✅ Acceptance Criteria
-- [ ] `LoginRequest.java` is a Java Record with `email` and `password` fields + validation
-- [ ] `AuthResponse.java` is a Java Record with `accessToken`, `refreshToken`, and `expiresIn`
-- [ ] `RefreshTokenRequest.java` is a Java Record with `refreshToken` field
-- [ ] `AuthService.login()` authenticates user and returns access + refresh tokens
-- [ ] `AuthService.login()` returns the same error for "user not found" and "wrong password" (no information leakage)
-- [ ] `AuthService.login()` rejects soft-deleted users
-- [ ] `AuthService.refresh()` validates refresh token, revokes the old one, and issues new tokens (rotation)
-- [ ] `AuthService.logout()` revokes the refresh token (idempotent)
-- [ ] `AuthController` has `POST /login`, `POST /refresh`, and `POST /logout` endpoints
-- [ ] `POST /logout` returns HTTP 204 No Content
-- [ ] `JwtAuthenticationFilter` extracts Bearer tokens from `Authorization` header
-- [ ] `JwtAuthenticationFilter` sets `SecurityContextHolder` authentication on valid JWT
-- [ ] `JwtAuthenticationFilter` handles malformed/expired JWTs gracefully (no exceptions thrown to client)
-- [ ] `SecurityConfig` registers `JwtAuthenticationFilter` before `UsernamePasswordAuthenticationFilter`
-- [ ] `SecurityConfig` permits auth endpoints and requires authentication for all other `/api/v1/**`
-- [ ] `UserDetailsService` (or equivalent) loads users by email for the filter
-- [ ] `mvn clean compile` passes from the project root
-- [ ] End-to-end flow works (test manually):
+- [x] `LoginRequest.java` is a Java Record with `email` and `password` fields + validation
+- [x] `AuthResponse.java` is a Java Record with `accessToken`, `refreshToken`, and `expiresIn`
+- [x] `RefreshTokenRequest.java` is a Java Record with `refreshToken` field
+- [x] `AuthService.login()` authenticates user and returns access + refresh tokens
+- [x] `AuthService.login()` returns the same error for "user not found" and "wrong password" (no information leakage)
+- [x] `AuthService.login()` rejects soft-deleted users
+- [x] `AuthService.refresh()` validates refresh token, revokes the old one, and issues new tokens (rotation)
+- [x] `AuthService.logout()` revokes the refresh token (idempotent)
+- [x] `AuthController` has `POST /login`, `POST /refresh`, and `POST /logout` endpoints
+- [x] `POST /logout` returns HTTP 204 No Content
+- [x] `JwtAuthenticationFilter` extracts Bearer tokens from `Authorization` header
+- [x] `JwtAuthenticationFilter` sets `SecurityContextHolder` authentication on valid JWT
+- [x] `JwtAuthenticationFilter` handles malformed/expired JWTs gracefully (no exceptions thrown to client)
+- [x] `SecurityConfig` registers `JwtAuthenticationFilter` before `UsernamePasswordAuthenticationFilter`
+- [x] `SecurityConfig` permits auth endpoints and requires authentication for all other `/api/v1/**`
+- [x] `UserDetailsService` (or equivalent) loads users by email for the filter
+- [x] `mvn clean compile` passes from the project root
+- [x] End-to-end flow works (test manually):
   - Register → Login (get tokens) → Access protected endpoint with Bearer token → Refresh → Logout → Verify old refresh token is rejected
