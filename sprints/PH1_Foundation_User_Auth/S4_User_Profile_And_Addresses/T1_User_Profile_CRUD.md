@@ -1,5 +1,5 @@
 # Task: User Profile CRUD (Get & Update)
-**Status:** [ ] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -46,14 +46,14 @@ You must implement:
 - Review existing: `user/service/AuthService.java`, `user/mapper/UserMapper.java`, `user/dto/UserResponse.java`
 
 ## ✅ Acceptance Criteria
-- [ ] `UserService` interface exists with `getProfile(UUID)` and `updateProfile(UUID, UpdateProfileRequest)` methods
-- [ ] `UserServiceImpl` implements the interface with proper repository calls and MapStruct mapping
-- [ ] `UpdateProfileRequest.java` is a Java Record with `firstName`, `lastName`, `phone` + validation annotations
-- [ ] `UserController.java` exists with `GET /api/v1/users/me` and `PUT /api/v1/users/me` endpoints
-- [ ] Both endpoints extract the authenticated user's UUID from the `SecurityContextHolder`
-- [ ] `GET /users/me` returns 200 with `UserResponse`
-- [ ] `PUT /users/me` updates only `firstName`, `lastName`, `phone` — NOT `email`, `password`, `roles`
-- [ ] `PUT /users/me` returns 200 with updated `UserResponse`
-- [ ] `ResourceNotFoundException` (404) is thrown when user is not found or soft-deleted
-- [ ] `mvn clean compile` passes from the project root
-- [ ] Endpoints work end-to-end via Swagger UI (register → login → get profile → update profile)
+- [x] `UserService` interface exists with `getProfile(UUID)` and `updateProfile(UUID, UpdateProfileRequest)` methods
+- [x] `UserServiceImpl` implements the interface with proper repository calls and MapStruct mapping
+- [x] `UpdateProfileRequest.java` is a Java Record with `firstName`, `lastName`, `phone` + validation annotations
+- [x] `UserController.java` exists with `GET /api/v1/users/me` and `PUT /api/v1/users/me` endpoints
+- [x] Both endpoints extract the authenticated user's UUID from the `SecurityContextHolder`
+- [x] `GET /users/me` returns 200 with `UserResponse`
+- [x] `PUT /users/me` updates only `firstName`, `lastName`, `phone` — NOT `email`, `password`, `roles`
+- [x] `PUT /users/me` returns 200 with updated `UserResponse`
+- [x] `ResourceNotFoundException` (404) is thrown when user is not found or soft-deleted
+- [x] `mvn clean compile` passes from the project root
+- [x] Endpoints work end-to-end via Swagger UI (register → login → get profile → update profile)

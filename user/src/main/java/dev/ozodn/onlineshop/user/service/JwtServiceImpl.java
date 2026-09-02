@@ -43,12 +43,6 @@ public class JwtServiceImpl implements JwtService {
         this.signingKey = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    /**
-     * Generates a signed JWT access token containing user identity and role claims.
-     *
-     * @param user user entity containing identity and roles
-     * @return signed JWT access token string
-     */
     @Override
     public String generateAccessToken(User user) {
         List<String> roles = user.getRoles().stream()
@@ -68,12 +62,6 @@ public class JwtServiceImpl implements JwtService {
                 .compact();
     }
 
-    /**
-     * Generates and persists a new refresh token for the specified user.
-     *
-     * @param user user entity for which to create the refresh token
-     * @return generated refresh token string
-     */
     @Override
     @Transactional
     public String generateRefreshToken(User user) {
@@ -93,13 +81,6 @@ public class JwtServiceImpl implements JwtService {
         return token;
     }
 
-    /**
-     * Extracts the user external identifier from the token subject claim.
-     *
-     * @param token JWT token string
-     * @return external identifier of the user
-     * @throws JwtException if the subject claim is missing or not a valid UUID
-     */
     @Override
     public UUID extractExternalId(String token) {
         String subject = extractClaim(token, Claims::getSubject);
@@ -113,12 +94,6 @@ public class JwtServiceImpl implements JwtService {
         }
     }
 
-    /**
-     * Extracts the user email address from the token claims.
-     *
-     * @param token JWT token string
-     * @return user email address stored in the token
-     */
     @Override
     public String extractEmail(String token) {
         return extractClaim(token, claims -> claims.get("email", String.class));
@@ -159,12 +134,6 @@ public class JwtServiceImpl implements JwtService {
                 .getPayload();
     }
 
-    /**
-     * Validates the signature, structure, and expiration of the JWT token.
-     *
-     * @param token JWT token string to validate
-     * @return {@code true} if the token is valid, {@code false} otherwise
-     */
     @Override
     public boolean isTokenValid(String token) {
         if (token == null || token.isBlank()) {

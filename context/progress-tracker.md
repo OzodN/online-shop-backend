@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S4 — User Profile & Addresses
-- **Current Task:** T1 — User Profile CRUD
+- **Current Task:** T2 — Become Seller Endpoint
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -41,14 +41,15 @@
 - **[S3/T3]** User Registration Endpoint ✅
 - **[S3/T4]** JWT Token Service ✅
 - **[S3/T5]** Login, Refresh, Logout, & Security Filter ✅
+- **[S4/T1]** User Profile CRUD ✅
 
 ### In Progress
 *(none)*
 
 ### Next Up
 - **[S4]** Implement `user` module (continued):
-   - User profile CRUD
    - "Become seller" endpoint
+   - Address migration & entity
    - Address CRUD
    - OpenAPI global config (OpenApiConfig class + Swagger UI verification)
 - **[S5]** Testing:

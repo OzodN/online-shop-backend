@@ -40,3 +40,7 @@
 
 **Session 10 (2026-08-29):**
 - Completed S3/T5: Login, Refresh, Logout Endpoints & Security Filter Configuration. Developer implemented the full authentication flow including token rotation, idempotent logout, and the `JwtAuthenticationFilter`. The `SecurityConfig` was properly updated to handle RFC 7807 error responses for 401/403. Review by Architecture Guardian, Code Quality Reviewer, and Security Analyst yielded a FULLY APPROVED verdict. Only non-blocking NITs were identified (double filter registration nuance with `@Component`, wildcard imports, password check timing side-channels, and identifier lookup database query efficiency). These advanced NITs were documented for future refactoring. **Sprint S3 is now complete.** Ready for Sprint S4.
+
+**Session 11 (2026-09-02):**
+- Planned Sprint S4 (5 tasks) and generated detailed task markdown files.
+- Completed S4/T1: User Profile CRUD. Developer implemented `UserService`, `UserServiceImpl`, `UserController` (GET/PUT `/api/v1/users/me`), `UpdateProfileRequest` DTO, and created a reusable `CurrentUserProvider` in `common.security` for extracting caller UUID from `SecurityContextHolder`. Initial review flagged 1 Blocker on `@Size(min = 2, max = 20)` in `UpdateProfileRequest` mismatching DB length (100), plus nits for wildcard imports and redundant `userRepository.save()` in `@Transactional`. Developer cleanly resolved all items: updated `@Size(max = 100)`, removed redundant save, and used explicit imports. Re-review passed with FULL APPROVAL. S4/T1 marked DONE. Ready for S4/T2.
