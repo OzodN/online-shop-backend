@@ -1,6 +1,6 @@
 # 📋 Sprint Map — Phase 1: Foundation + User & Auth 🔐
 
-> **Planning approach:** Rolling Wave Planning — S1, S2 (complete), and S3 (current) have detailed task files. Future sprints are outlined but will be detailed when we reach them.
+> **Planning approach:** Rolling Wave Planning — S1, S2, S3 (complete), and S4 (current) have detailed task files. S5 is outlined but will be detailed when we reach it.
 
 ---
 
@@ -20,13 +20,13 @@ sprints/
     │   ├── T2_Global_Exception_Handler_RFC7807.md
     │   ├── T3_Shared_Pagination_DTOs.md
     │   └── T4_JPA_Auditing_Configuration.md
-    ├── S3_User_Registration_And_Auth/         ← 🟢 CURRENT SPRINT
+    ├── S3_User_Registration_And_Auth/         ← ✅ COMPLETE
     │   ├── T1_Flyway_Migrations_User_Schema.md
     │   ├── T2_User_Role_Entities_Repositories.md
     │   ├── T3_User_Registration_Endpoint.md
     │   ├── T4_JWT_Token_Service.md
     │   └── T5_Login_Refresh_Logout_SecurityConfig.md
-    ├── S4_User_Profile_And_Addresses/         ← ⬜ PLANNED
+    ├── S4_User_Profile_And_Addresses/         ← 🟢 CURRENT SPRINT
     │   ├── T1_User_Profile_CRUD.md
     │   ├── T2_Become_Seller_Endpoint.md
     │   ├── T3_Address_Migration_Entity.md
@@ -47,16 +47,31 @@ sprints/
 |---|---|---|---|---|
 | **S1** | Project Foundation | Maven multi-module, Docker Compose, Spring Security/Modulith config, .gitignore | 4 | ✅ Complete |
 | **S2** | Common Module | BaseEntity, SoftDeletableEntity, RFC 7807 exception handler, shared DTOs, JPA auditing | 4 | ✅ Complete |
-| **S3** | User Registration & Auth | Flyway migrations, User/Role entities, registration, JWT token service, login/refresh/logout | 5 | 🟢 Current |
-| **S4** | User Profile & Addresses | Profile CRUD, become-seller, address entity + CRUD, Swagger/OpenAPI | 5 | ⬜ Planned |
+| **S3** | User Registration & Auth | Flyway migrations, User/Role entities, registration, JWT token service, login/refresh/logout | 5 | ✅ Complete |
+| **S4** | User Profile & Addresses | Profile CRUD, become-seller, address entity + CRUD, Swagger/OpenAPI | 5 | 🟢 Current |
 | **S5** | Testing & Verification | Unit tests, integration tests (Testcontainers), Spring Modulith architecture test | 4 | ⬜ Planned |
 
-**Total Phase 1:** 5 sprints, ~22 tasks
+**Total Phase 1:** 5 sprints, 22 tasks
+
+---
+
+## S4 Task Details
+
+| Task | Name | Dependencies | Focus |
+|---|---|---|---|
+| **T1** | User Profile CRUD | S3 complete | `UserService`, `UserController` (GET/PUT `/users/me`), `UpdateProfileRequest` DTO, security context UUID extraction |
+| **T2** | Become Seller Endpoint | T1 (reuses `UserService` + security context helper) | `POST /users/me/become-seller`, `RoleRepository`, `@EnableMethodSecurity`, optional `UserBecameSellerEvent` |
+| **T3** | Address Migration & Entity | None (independent) | Flyway `V3__create_addresses_table.sql`, `Address` entity (extends `SoftDeletableEntity`), `AddressRepository` |
+| **T4** | Address CRUD Endpoints | T3 (needs Address entity) | `AddressService`, `AddressController`, `AddressMapper`, Create/Update/Delete/List DTOs, ownership verification, default address logic |
+| **T5** | OpenAPI Global Config | None (independent, but best done last to verify all endpoints) | `OpenApiConfig` class in `app` module, `@SecurityScheme(bearerAuth)`, `@OpenAPIDefinition`, Swagger UI "Authorize" button |
+
+**Recommended order:** T1 → T2 → T3 → T4 → T5 (T3 can be done in parallel with T1/T2)
 
 ---
 
 ## Notes
 
-- Tasks for S2-S5 will be generated in detail when we reach each sprint.
+- Tasks for S5 will be generated in detail when we reach that sprint.
 - Each sprint builds on the previous one — do not skip ahead.
 - After completing all S5 tasks, Phase 1 is complete and we move to Phase 2: Product & Catalog.
+

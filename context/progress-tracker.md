@@ -7,8 +7,8 @@
 ## Current Status
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
-- **Current Sprint:** S3 — User Registration & Auth
-- **Current Task:** T4 — JWT Token Service
+- **Current Sprint:** S4 — User Profile & Addresses
+- **Current Task:** T1 — User Profile CRUD
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -23,8 +23,8 @@
 |---|---|---|
 | S1 | Project Foundation | ✅ Complete |
 | S2 | Common Module | ✅ Complete |
-| S3 | User Registration & Auth | 🟢 In Progress |
-| S4 | User Profile & Addresses | ⬜ Not Started |
+| S3 | User Registration & Auth | ✅ Complete |
+| S4 | User Profile & Addresses | 🟢 In Progress |
 | S5 | Testing & Verification | ⬜ Not Started |
 
 ### Completed
