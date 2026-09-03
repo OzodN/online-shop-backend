@@ -1,5 +1,6 @@
 package dev.ozodn.onlineshop.user.service;
 
+import dev.ozodn.onlineshop.common.exception.DuplicateResourceException;
 import dev.ozodn.onlineshop.common.exception.ResourceNotFoundException;
 import dev.ozodn.onlineshop.user.dto.UpdateProfileRequest;
 import dev.ozodn.onlineshop.user.dto.UserResponse;
@@ -29,4 +30,14 @@ public interface UserService {
      * @throws ResourceNotFoundException if no user is found with the given external identifier
      */
     UserResponse updateProfile(UUID externalId, UpdateProfileRequest request);
+
+    /**
+     * Grants seller privileges to the specified user account.
+     *
+     * @param externalId unique business identifier of the user
+     * @return updated user profile response containing the seller role
+     * @throws ResourceNotFoundException if no user is found with the given external identifier
+     * @throws DuplicateResourceException if the user already has the seller role
+     */
+    UserResponse becomeSeller(UUID externalId);
 }

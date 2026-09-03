@@ -14,11 +14,13 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * REST controller for user profile management endpoints.
@@ -58,5 +60,18 @@ public class UserController {
                         request
                 )
         );
+    }
+
+    @Operation(summary = "Become a seller", description = "Adds the SELLER role to the currently authenticated user while preserving existing roles.\n After successful promotion, refresh the authentication token to obtain a new JWT containing the updated roles claim.")
+    @ApiResponse(responseCode = "200", description = "Successfully elevated to seller")
+    @ApiResponse(responseCode = "401", description = "Authentication required", content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
+    @ApiResponse(responseCode = "403", description = "Insufficient permissions (requires CUSTOMER role)", content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
+    @ApiResponse(responseCode = "409", description = "User already has the SELLER role", content = @Content(schema = @Schema(implementation = ProblemDetail.class)))
+    @SecurityRequirement(name = "bearerAuth")
+    @PreAuthorize("hasRole('CUSTOMER')")
+    @PostMapping("/me/become-seller")
+    public ResponseEntity<UserResponse> becomeSeller() {
+        return ResponseEntity.ok(
+                userService.becomeSeller(currentUserProvider.getCurrentUserExternalId()));
     }
 }

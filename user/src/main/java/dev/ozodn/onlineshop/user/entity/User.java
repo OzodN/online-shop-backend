@@ -43,4 +43,17 @@ public class User extends SoftDeletableEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles = new HashSet<>();
+
+    /**
+     * Assigns the specified role to the user.
+     *
+     * @param role the {@link Role} to assign
+     * @throws IllegalArgumentException if the role is {@code null}
+     */
+    public void addRole(Role role) {
+        if (role == null) {
+            throw new IllegalArgumentException("Role must not be null");
+        }
+        roles.add(role);
+    }
 }

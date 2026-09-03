@@ -8,7 +8,7 @@
 
 - **Current Phase:** Phase 1 — Foundation + User & Auth 🔐 *(In Progress)*
 - **Current Sprint:** S4 — User Profile & Addresses
-- **Current Task:** T2 — Become Seller Endpoint
+- **Current Task:** T3 — Address Migration & Entity
 - **Current Goal:** Project skeleton, user registration, JWT auth, and address management.
 
 ---
@@ -42,16 +42,15 @@
 - **[S3/T4]** JWT Token Service ✅
 - **[S3/T5]** Login, Refresh, Logout, & Security Filter ✅
 - **[S4/T1]** User Profile CRUD ✅
+- **[S4/T2]** Become Seller Endpoint ✅
 
 ### In Progress
-*(none)*
+- **[S4/T3]** Address Migration & Entity
 
 ### Next Up
 - **[S4]** Implement `user` module (continued):
-   - "Become seller" endpoint
-   - Address migration & entity
-   - Address CRUD
-   - OpenAPI global config (OpenApiConfig class + Swagger UI verification)
+   - Address CRUD endpoints (T4)
+   - OpenAPI global config (T5)
 - **[S5]** Testing:
    - Write unit tests + integration tests with Testcontainers
    - Add Spring Modulith architecture verification test

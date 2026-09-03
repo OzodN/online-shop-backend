@@ -24,8 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
 
 
 /**
@@ -108,14 +106,16 @@ public class AuthServiceImpl implements AuthService {
                         "Default role '" + DEFAULT_ROLE + "' is missing from database"
                 ));
 
-        return User.builder()
+        User user = User.builder()
                 .email(request.email())
                 .passwordHash(passwordEncoder.encode(request.password()))
                 .firstName(request.firstName())
                 .lastName(request.lastName())
                 .phone(request.phone())
-                .roles(new HashSet<>(Set.of(customerRole)))
                 .build();
+        user.addRole(customerRole);
+
+        return user;
     }
 
     private @NonNull User findActiveUser(String email) {

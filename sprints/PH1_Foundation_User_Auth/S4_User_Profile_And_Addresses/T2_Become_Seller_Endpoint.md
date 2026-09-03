@@ -1,5 +1,5 @@
 # Task: Become Seller Endpoint
-**Status:** [ ] TODO / [ ] IN PROGRESS / [ ] DONE
+**Status:** [ ] TODO / [ ] IN PROGRESS / [x] DONE
 
 ## 🎯 Objective
 
@@ -40,13 +40,13 @@ You must implement:
 - Review existing: `user/entity/Role.java`, Flyway V1 migration (role seeding)
 
 ## ✅ Acceptance Criteria
-- [ ] `RoleRepository.java` exists with `findByName(String)` method
-- [ ] `UserService` has `becomeSeller(UUID externalId)` method
-- [ ] `UserServiceImpl.becomeSeller()` adds the SELLER role to the user's roles set
-- [ ] `UserServiceImpl.becomeSeller()` handles the case where the user already has the SELLER role (either 409 or idempotent — decide and document)
-- [ ] `UserController` has `POST /api/v1/users/me/become-seller` endpoint
-- [ ] The endpoint is restricted to authenticated users (ideally CUSTOMER-only via `@PreAuthorize` or service-level check)
-- [ ] Updated `UserResponse` includes the new SELLER role
-- [ ] `@EnableMethodSecurity` is configured (if using `@PreAuthorize`)
-- [ ] `mvn clean compile` passes from the project root
-- [ ] End-to-end: Register → Login → Become Seller → Refresh token → Verify new JWT contains SELLER role
+- [x] `RoleRepository.java` exists with `findByName(String)` method
+- [x] `UserService` has `becomeSeller(UUID externalId)` method
+- [x] `UserServiceImpl.becomeSeller()` adds the SELLER role to the user's roles set
+- [x] `UserServiceImpl.becomeSeller()` handles the case where the user already has the SELLER role (409 Conflict via `DuplicateResourceException`)
+- [x] `UserController` has `POST /api/v1/users/me/become-seller` endpoint
+- [x] The endpoint is restricted to authenticated users (restricted to CUSTOMER via `@PreAuthorize("hasRole('CUSTOMER')")`)
+- [x] Updated `UserResponse` includes the new SELLER role
+- [x] `@EnableMethodSecurity` is configured in `SecurityConfig.java`
+- [x] `mvn clean compile` passes from the project root
+- [x] End-to-end: Register → Login → Become Seller → Refresh token → Verify new JWT contains SELLER role
