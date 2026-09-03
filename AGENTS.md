@@ -36,6 +36,9 @@ This project is being built by a **Junior Backend Developer** as a learning exer
 | 📝 Swagger Writer | OpenAPI annotations on controllers and DTOs (**WRITER**, not reviewer) |
 | 📝 Javadoc Writer | Javadoc comments on services, entities, repositories, exceptions (**WRITER**, not reviewer) |
 
+> **Model Policy:** All agents (reviewers and writers) are strictly configured to use **Gemini 3.8 Flash (High)**.
+
+
 ---
 
 ## Mandatory First Step: Read Project Context
